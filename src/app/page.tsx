@@ -1,6 +1,6 @@
 
 import CardSection from "@/app/components/CardSection";
-import CategoryShowcase from "@/app/components/CategoryShowcase";
+// import CategoryShowcase from "@/app/components/CategoryShowcase";
 import Featured from "@/app/components/Featured";
 import FlightEssentials from "@/app/components/FlightEssentials";
 import GearUp from "@/app/components/GearUp";
@@ -24,7 +24,7 @@ export default function Home() {
       <Featured/>
       <GearUp/>
       <FlightEssentials/>
-      <CategoryShowcase/>
+      {/* <CategoryShowcase/> */}
       <Navigation/>
     </div>
   </div>
