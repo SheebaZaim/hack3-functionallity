@@ -125,7 +125,7 @@ import { urlFor } from "@/sanity/lib/image";  // Ensure this imports correctly
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import { NextPage } from "next";  // Correct import for Next.js page component
-// import { urlFor } from "@/sanity/lib/image";   
+ 
 interface Product {
   _id: string;
   productName: string;
@@ -143,7 +143,7 @@ interface ProductPageProps {
   params: { slug: string };
 }
 
-async function getProduct(slug: string): Promise<Product | null> {
+async function getProduct(slug: string): Promise<Product|any >{
   try {
     const product = await client.fetch(
       groq`*[_type == "product" && slug.current == $slug][0] {
@@ -159,10 +159,10 @@ async function getProduct(slug: string): Promise<Product | null> {
       }`,
       { slug }
     );
-    return product || null;
+    return product ;
   } catch (error) {
     console.error("Error fetching product:", error);
-    return null;
+    
   }
 }
 
@@ -199,4 +199,3 @@ const ProductPage: NextPage<ProductPageProps> = async ({ params }) => {
 };
 
 export default ProductPage;
-// import { urlFor } from "@/sanity/lib/image";      

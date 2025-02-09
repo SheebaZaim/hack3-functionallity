@@ -6,7 +6,7 @@ import Link from "next/link"
 export default function ProductsCards() {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {[...Array(91)].map((item, index) => {
+      {[...Array(30)].map((item, index) => {
         return (
           <Card className="relative w-full max-w-[348px] overflow-hidden border-none shadow-none hover:scale-[1.02]" key={index}>
             <Link href={`/products/${index + 1}`}>
